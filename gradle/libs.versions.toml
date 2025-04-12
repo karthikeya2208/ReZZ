@@ -18,6 +18,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "gson" }
 recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+lottie = { module = "com.airbnb.android:lottie", version = "6.1.0" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

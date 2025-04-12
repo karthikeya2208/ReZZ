@@ -41,5 +41,5 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.recyclerview)
-
+    implementation(libs.lottie)
 }

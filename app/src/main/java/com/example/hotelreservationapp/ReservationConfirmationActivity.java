@@ -11,9 +11,7 @@ public class ReservationConfirmationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
+
         setContentView(R.layout.activity_reservation_confirmation);
 
         textConfirmationMessage = findViewById(R.id.textConfirmationMessage);

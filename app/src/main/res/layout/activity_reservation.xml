@@ -4,6 +4,7 @@
     android:id="@+id/reservation_main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FAFAFA"
     android:padding="16dp">
 
     <!-- Scrollable Content -->
@@ -18,85 +19,101 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="8dp">
 
-            <!-- CardView to mimic Screen 2 styling -->
-            <androidx.cardview.widget.CardView
+            <!-- Reservation Card -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
-                android:elevation="4dp">
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:strokeColor="#DDDDDD"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="20dp">
 
-                    <!-- Hotel Info -->
                     <TextView
                         android:id="@+id/textHotelName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Hotel name: The Ritz"
+                        android:text="Hotel Name: The Ritz"
+                        android:textSize="20sp"
                         android:textStyle="bold"
-                        android:textSize="18sp"
-                        android:paddingBottom="8dp" />
+                        android:textColor="#212121"
+                        android:paddingBottom="12dp" />
 
                     <TextView
                         android:id="@+id/textCheckIn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Check-in Date: 2025-04-06"
-                        android:paddingBottom="4dp" />
+                        android:textSize="14sp"
+                        android:textColor="#424242"
+                        android:paddingBottom="6dp" />
 
                     <TextView
                         android:id="@+id/textCheckOut"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Check-out Date: 2025-04-08"
-                        android:paddingBottom="4dp" />
+                        android:textSize="14sp"
+                        android:textColor="#424242"
+                        android:paddingBottom="6dp" />
 
                     <TextView
                         android:id="@+id/textPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Price: $200"
-                        android:paddingBottom="4dp" />
+                        android:textSize="14sp"
+                        android:textColor="#424242" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <!-- Guest Info Section -->
+            <!-- Guest Details Header -->
             <TextView
                 android:id="@+id/guestDetailsHeading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Guest Details"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:paddingBottom="8dp"
-                android:paddingTop="8dp" />
+                android:textColor="#1E88E5"
+                android:paddingTop="4dp"
+                android:paddingBottom="12dp" />
 
+            <!-- Guest Recycler View -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerGuestDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:scrollbars="vertical"
                 android:nestedScrollingEnabled="false" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <!-- Fixed Submit Button -->
-    <Button
+    <!-- Submit Button -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonSubmitReservation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Submit Reservation"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        app:cornerRadius="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#6200EE"
+        android:elevation="8dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

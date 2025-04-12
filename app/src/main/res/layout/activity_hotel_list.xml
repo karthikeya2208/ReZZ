@@ -5,59 +5,58 @@
     android:layout_height="match_parent"
     android:background="#F9F9F9">
 
-    <!-- Fullscreen Layout -->
+    <!-- Main Content Layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Spacer at top -->
+        <!-- Top Spacer -->
         <Space
             android:layout_width="match_parent"
             android:layout_height="12dp" />
 
-        <!-- Welcome Message Card -->
+        <!-- Welcome Card -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="8dp"
-            app:strokeColor="#CCCCCC"
-            app:strokeWidth="1dp"
-            android:layout_margin="16dp">
-
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="6dp"
+            app:strokeColor="#E0E0E0"
+            app:strokeWidth="1dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="24dp">
 
                 <TextView
                     android:id="@+id/userInfoText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:letterSpacing="0.05"
                     android:text="Welcome, [User]!"
                     android:textColor="#1E88E5"
-                    android:textSize="22sp"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/userSubInfoText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginTop="8dp"
                     android:fontFamily="sans-serif"
                     android:text="Here are the best hotel options available for your selection:"
-                    android:textColor="#757575"
-                    android:textSize="14sp" />
+                    android:textColor="#616161"
+                    android:textSize="15sp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Scrollable Hotel List (RecyclerView inside NestedScrollView) -->
+        <!-- Hotel List Section -->
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -73,31 +72,36 @@
                     android:id="@+id/recyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:scrollbars="vertical"
-                    android:layout_marginBottom="8dp" />
+                    android:layout_marginBottom="12dp"
+                    android:clipToPadding="false"
+                    android:scrollbars="vertical" />
 
                 <ProgressBar
                     android:id="@+id/progressBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:visibility="gone"
-                    android:layout_marginBottom="12dp" />
+                    android:layout_marginBottom="16dp"
+                    android:visibility="gone" />
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
     </LinearLayout>
 
-    <!-- Fixed Next Button at Bottom -->
-    <Button
+    <!-- Bottom Floating Button -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/nextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_margin="16dp"
         android:text="Next"
+        android:textAllCaps="false"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:backgroundTint="#6200EE"
         android:textColor="@android:color/white"
+        app:cornerRadius="12dp"
+        app:iconPadding="8dp"
+        app:iconTint="@android:color/white"
+        android:backgroundTint="#6200EE"
         android:elevation="8dp" />
 </FrameLayout>
