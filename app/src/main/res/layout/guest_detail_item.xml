@@ -1,51 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="8dp"
-    android:background="@android:color/white"
-    android:elevation="2dp"
-    android:layout_marginBottom="8dp">
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="12dp"
+    android:layout_marginBottom="8dp"
+    card_view:cardCornerRadius="16dp"
+    card_view:cardElevation="6dp"
+    card_view:cardBackgroundColor="#FAFAFA">
 
-    <!-- Guest Number Label -->
-    <TextView
-        android:id="@+id/textGuestNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Guest 1"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:layout_marginBottom="4dp" />
-
-    <!-- Guest Name -->
-    <EditText
-        android:id="@+id/editGuestName"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Guest Name"
-        android:inputType="textPersonName"
-        android:minHeight="48dp" />
+        android:orientation="vertical"
+        android:padding="20dp">
 
-    <!-- Gender Radio Buttons -->
-    <RadioGroup
-        android:id="@+id/radioGender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="4dp">
-
-        <RadioButton
-            android:id="@+id/radioMale"
+        <!-- Guest Title -->
+        <TextView
+            android:id="@+id/textGuestNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Male" />
+            android:text="👤 Guest 1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#2C2C2C"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="12dp" />
 
-        <RadioButton
-            android:id="@+id/radioFemale"
+        <!-- Guest Name Field -->
+        <EditText
+            android:id="@+id/editGuestName"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Enter full name"
+            android:background="@drawable/bg_edittext"
+            android:paddingHorizontal="16dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Gender Row -->
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Female"
-            android:layout_marginStart="16dp"/>
-    </RadioGroup>
-</LinearLayout>
+            android:orientation="horizontal"
+            android:layout_gravity="start">
+
+            <RadioGroup
+                android:id="@+id/radioGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="♂ Male"
+                    android:buttonTint="#5E35B1"
+                    android:textColor="#333333"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:id="@+id/radioFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="♀ Female"
+                    android:buttonTint="#D81B60"
+                    android:textColor="#333333"
+                    android:textSize="14sp"
+                    android:layout_marginStart="24dp" />
+            </RadioGroup>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

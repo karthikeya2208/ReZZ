@@ -3,55 +3,66 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="12dp"
-    card_view:cardCornerRadius="12dp"
-    card_view:cardElevation="6dp">
+    android:layout_margin="8dp"
+    card_view:cardCornerRadius="16dp"
+    card_view:cardElevation="8dp"
+    android:background="@android:color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:background="@android:color/white">
 
+        <!-- Hotel Name -->
         <TextView
             android:id="@+id/hotelName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hotel Name"
-            android:textSize="18sp"
+            android:text=" Hotel Royale"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@android:color/black" />
+            android:textColor="#212121" />
 
-        <TextView
-            android:id="@+id/hotelPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Price: $0"
-            android:textSize="16sp"
-            android:textColor="@android:color/holo_green_dark" />
-
+        <!-- Hotel Location -->
         <TextView
             android:id="@+id/hotelLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Location"
-            android:textStyle="italic"
-            android:layout_marginTop="4dp"/>
+            android:text="📍 Downtown, Toronto"
+            android:textSize="14sp"
+            android:textColor="#555"
+            android:layout_marginTop="2dp" />
 
+        <!-- Hotel Price -->
+        <TextView
+            android:id="@+id/hotelPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="💰 $150/night"
+            android:textSize="16sp"
+            android:textColor="#388E3C"
+            android:layout_marginTop="6dp" />
 
+        <!-- Hotel Availability -->
         <TextView
             android:id="@+id/hotelAvailability"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Available"
-            android:textSize="16sp"
-            android:textColor="@android:color/holo_blue_dark" />
+            android:text="✅ Available"
+            android:textSize="15sp"
+            android:textColor="#1976D2"
+            android:layout_marginTop="6dp" />
 
+        <!-- Select Radio -->
         <RadioButton
             android:id="@+id/radioSelect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select"
-            android:layout_marginTop="8dp"/>
+            android:text="Select this stay"
+            android:layout_marginTop="10dp"
+            android:buttonTint="@color/purple_700"
+            android:textColor="#000000"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
