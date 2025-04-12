@@ -103,10 +103,10 @@ public class MainActivity extends AppCompatActivity {
             String checkIn = formatDate(checkInCalendar);
             String checkOut = formatDate(checkOutCalendar);
 
-            SharedPreferences prefs = getSharedPreferences("HotelPrefs", MODE_PRIVATE);
-            SharedPreferences.Editor editor = prefs.edit();
-            editor.putString("customer_name", name);
-            editor.putInt("guest_count", guestCount);
+            SharedPreferences sharedPreferences  = getSharedPreferences("HotelPrefs", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences .edit();
+            editor.putString("customerName", name);
+            editor.putInt("guests", guestCount);
             editor.putString("check_in", checkIn);
             editor.putString("check_out", checkOut);
             editor.apply();

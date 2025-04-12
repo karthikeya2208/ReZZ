@@ -1,6 +1,7 @@
 package com.example.hotelreservationapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.*;
@@ -54,8 +55,11 @@ public class ReservationDetailsActivity extends AppCompatActivity {
         checkInDate = intent.getStringExtra("checkinDate");
         checkOutDate = intent.getStringExtra("checkoutDate");
         price = intent.getDoubleExtra("selectedHotelPrice", 0.0);
-        guestCount = intent.getIntExtra("guests", 1);
-        customerName = intent.getStringExtra("customerName");
+
+        // Retrieve customer name and guest count from SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("HotelPrefs", MODE_PRIVATE);
+        customerName = sharedPreferences.getString("customerName", "Guest");
+        guestCount = sharedPreferences.getInt("guests", 1);
 
         // Set text values
         textHotelName.setText("Hotel Name: " + hotelName);
